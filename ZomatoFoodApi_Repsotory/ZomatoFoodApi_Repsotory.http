@@ -1,0 +1,6 @@
+@ZomatoFoodApi_Repsotory_HostAddress = http://localhost:5173
+
+GET {{ZomatoFoodApi_Repsotory_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

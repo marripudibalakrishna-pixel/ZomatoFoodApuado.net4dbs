@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37111.16 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apis", "Apis", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClassLibraries", "ClassLibraries", "{F04E1898-0917-474A-842F-AEA93B18ADD5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestCases", "TestCases", "{62B9E984-7856-485E-8245-5A3FE5850009}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZomatoFoodApi", "ZomatoFoodApi\ZomatoFoodApi.csproj", "{4E843DD4-B01B-4029-9721-9AB70BF7990B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZomatoFoodApi_Repository", "ZomatoFoodApi_Repository\ZomatoFoodApi_Repository.csproj", "{C78D56F2-E08D-4504-A6FB-91271FF966C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZomatoFoodApi_Service", "ZomatoFoodApi_Service\ZomatoFoodApi_Service.csproj", "{6FFBEDEC-2312-4C8F-9E70-1AAF2326BFC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZomatoFoodApi_Entities", "ZomatoFoodApi_Entities\ZomatoFoodApi_Entities.csproj", "{FF782CA3-2E87-4997-8682-F7B62BDB71EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZomatoFoodApi_DbConnectivity", "ZomatoFoodApi_DbConnectivity\ZomatoFoodApi_DbConnectivity.csproj", "{7A8C9701-D446-4848-91F7-A29C5672E3F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E843DD4-B01B-4029-9721-9AB70BF7990B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E843DD4-B01B-4029-9721-9AB70BF7990B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E843DD4-B01B-4029-9721-9AB70BF7990B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E843DD4-B01B-4029-9721-9AB70BF7990B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C78D56F2-E08D-4504-A6FB-91271FF966C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C78D56F2-E08D-4504-A6FB-91271FF966C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C78D56F2-E08D-4504-A6FB-91271FF966C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C78D56F2-E08D-4504-A6FB-91271FF966C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FFBEDEC-2312-4C8F-9E70-1AAF2326BFC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FFBEDEC-2312-4C8F-9E70-1AAF2326BFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FFBEDEC-2312-4C8F-9E70-1AAF2326BFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FFBEDEC-2312-4C8F-9E70-1AAF2326BFC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF782CA3-2E87-4997-8682-F7B62BDB71EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF782CA3-2E87-4997-8682-F7B62BDB71EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF782CA3-2E87-4997-8682-F7B62BDB71EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF782CA3-2E87-4997-8682-F7B62BDB71EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A8C9701-D446-4848-91F7-A29C5672E3F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A8C9701-D446-4848-91F7-A29C5672E3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A8C9701-D446-4848-91F7-A29C5672E3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A8C9701-D446-4848-91F7-A29C5672E3F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4E843DD4-B01B-4029-9721-9AB70BF7990B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C78D56F2-E08D-4504-A6FB-91271FF966C8} = {F04E1898-0917-474A-842F-AEA93B18ADD5}
+		{6FFBEDEC-2312-4C8F-9E70-1AAF2326BFC6} = {F04E1898-0917-474A-842F-AEA93B18ADD5}
+		{FF782CA3-2E87-4997-8682-F7B62BDB71EC} = {F04E1898-0917-474A-842F-AEA93B18ADD5}
+		{7A8C9701-D446-4848-91F7-A29C5672E3F4} = {F04E1898-0917-474A-842F-AEA93B18ADD5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34668117-FDF2-4929-8A34-FFA61D023304}
+	EndGlobalSection
+EndGlobal

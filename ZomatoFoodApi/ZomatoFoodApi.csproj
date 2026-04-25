@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ZomatoFoodApi_DbConnectivity\ZomatoFoodApi_DbConnectivity.csproj" />
+    <ProjectReference Include="..\ZomatoFoodApi_Entities\ZomatoFoodApi_Entities.csproj" />
+    <ProjectReference Include="..\ZomatoFoodApi_Repository\ZomatoFoodApi_Repository.csproj" />
+    <ProjectReference Include="..\ZomatoFoodApi_Service\ZomatoFoodApi_Service.csproj" />
+  </ItemGroup>
+
+</Project>
