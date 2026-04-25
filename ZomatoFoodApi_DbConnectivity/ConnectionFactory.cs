@@ -8,7 +8,7 @@ using ZomatoFoodApi_Entities.Utils;
 
 namespace ZomatoFoodApi_DbConnectivity
 {
-    public class ConnectionFactory : IConnectionfactory
+    public class ConnectionFactory : IConnectionFactory
     {
         private readonly IConfiguration _configuration;
         //inject the IConfiguration interface in the constructor of the connection factory class and assign it to the private readonly field of the IConfiguration interface type.
