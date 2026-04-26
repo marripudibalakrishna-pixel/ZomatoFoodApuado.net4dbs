@@ -12,8 +12,8 @@ namespace ZomatoFoodApi_Entities.Interfaces
     {
         Task<List<EmployeeDto>> GetEmployees();
         Task<EmployeeDto> GetEmployeeById(int empid);
-        Task<int> AddEmployes(Employee empdetail);
+        Task<int> AddEmployes(EmployeeDto empdetail);
         Task<bool> DeleteEmployesById(int empid);
-        Task<bool> UpdateEmploye(Employee empdetail);
+        Task<bool> UpdateEmploye(EmployeeDto empdetail);
     }
 }

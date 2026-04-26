@@ -1,4 +1,8 @@
 using ZomatoFoodApi_DbConnectivity;
+using ZomatoFoodAPI_DbContectivity;
+using ZomatoFoodApi_Entities.Interfaces;
+using ZomatoFoodApi_Repository;
+using ZomatoFoodApi_Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +13,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IConnectionFactory, ConnectionFactory>();
-
+builder.Services.AddScoped<IFileUploadRepository, FileUploadRepository>();
+builder.Services.AddScoped<IFileUploadService, FilesUploadService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
