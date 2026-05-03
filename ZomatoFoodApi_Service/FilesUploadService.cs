@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,21 +16,24 @@ namespace ZomatoFoodApi_Service
         public class FilesUploadService : IFileUploadService
         {
             public readonly IFileUploadRepository _filesUploadRepository;
-            public FilesUploadService(IFileUploadRepository filesUploadRepository)
+            public readonly IMapper _mapper;
+            public FilesUploadService(IFileUploadRepository filesUploadRepository, IMapper mapper)
             {
                 _filesUploadRepository = filesUploadRepository;
+            _mapper = mapper;
             }
 
         public async Task<FileUploadResponse> AddFileUpload(FileUploadDto fileUpload)
         {
             FileUpload obj = new FileUpload();//destinationmodelclass object
-                                              //This Code was replaced by above Automapper concept.
-            obj.FileName = fileUpload.FileName;
+            _mapper.Map(fileUpload, obj);//sourceobject,destinationobject
+                                            //This Code was replaced by above Automapper concept.
+           /* obj.FileName = fileUpload.FileName;
             obj.FilePath = fileUpload.FilePath;
             obj.CreatedDatetTime = fileUpload.CreatedDatetTime;
             obj.Createdby = fileUpload.Createdby;
             obj.ModifiedFilename = fileUpload.ModifiedFilename;
-            obj.Id = fileUpload.Id;
+            obj.Id = fileUpload.Id;*/
             var result = await _filesUploadRepository.AddFileUpload(obj);
             return result;
 
@@ -39,32 +43,36 @@ namespace ZomatoFoodApi_Service
         {
             var result = await _filesUploadRepository.GetFileUploadDetailsById(Id);
             FileUploadDto fileUploadDTO = new FileUploadDto();
-            fileUploadDTO.ModifiedFilename = result.ModifiedFilename;
-            fileUploadDTO.Id = result.Id;
-            fileUploadDTO.FileName = result.FileName;
-            fileUploadDTO.ModifiedFilename = result.ModifiedFilename;
-            fileUploadDTO.FilePath = result.FilePath;
-            fileUploadDTO.Createdby = result.Createdby;
-            fileUploadDTO.CreatedDatetTime = result.CreatedDatetTime;
-            return fileUploadDTO;
+            return _mapper.Map<FileUploadDto>(result);//entity to dto mapping
+
+            /* fileUploadDTO.ModifiedFilename = result.ModifiedFilename;
+             fileUploadDTO.Id = result.Id;
+             fileUploadDTO.FileName = result.FileName;
+             fileUploadDTO.ModifiedFilename = result.ModifiedFilename;
+             fileUploadDTO.FilePath = result.FilePath;
+             fileUploadDTO.Createdby = result.Createdby;
+             fileUploadDTO.CreatedDatetTime = result.CreatedDatetTime;
+             return fileUploadDTO;*/
         }
 
         public async Task<List<FileUploadDto>> GetFileUploadList()
         {
             var fileUploadList = await _filesUploadRepository.GetFileUploadList();
             List<FileUploadDto> lstFileUploadDTO = new List<FileUploadDto>();
-            foreach (var fileUpload in fileUploadList)
-            {
-                FileUploadDto  fileUploadDTO = new FileUploadDto();
-                fileUploadDTO.Id = fileUpload.Id;
-                fileUploadDTO.FileName = fileUpload.FileName;
-                fileUploadDTO.ModifiedFilename = fileUpload.ModifiedFilename;
-                fileUploadDTO.FilePath = fileUpload.FilePath;
-                fileUploadDTO.Createdby = fileUpload.Createdby;
-                fileUploadDTO.CreatedDatetTime = fileUpload.CreatedDatetTime;
-                lstFileUploadDTO.Add(fileUploadDTO);
-            }
-            return lstFileUploadDTO;
+            return _mapper.Map<List<FileUploadDto>>(fileUploadList);//entity to dto mapping
+
+            //foreach (var fileUpload in fileUploadList)
+            //{
+            //    FileUploadDto  fileUploadDTO = new FileUploadDto();
+            //    fileUploadDTO.Id = fileUpload.Id;
+            //    fileUploadDTO.FileName = fileUpload.FileName;
+            //    fileUploadDTO.ModifiedFilename = fileUpload.ModifiedFilename;
+            //    fileUploadDTO.FilePath = fileUpload.FilePath;
+            //    fileUploadDTO.Createdby = fileUpload.Createdby;
+            //    fileUploadDTO.CreatedDatetTime = fileUpload.CreatedDatetTime;
+            //    lstFileUploadDTO.Add(fileUploadDTO);
+            //}
+            //return lstFileUploadDTO;
         }
     }
     }

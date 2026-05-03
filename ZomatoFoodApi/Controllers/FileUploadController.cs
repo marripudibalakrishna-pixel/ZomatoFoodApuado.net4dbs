@@ -9,13 +9,10 @@ namespace ZomatoFoodApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FileUploadController : ControllerBase
+    public class FileUploadController(IFileUploadService fileUploadService) : ControllerBase
     {
-        public readonly IFileUploadService _fileUploadService   ;
-        public FileUploadController(IFileUploadService fileUploadService)
-        {
-            _fileUploadService = fileUploadService;
-        }
+        public readonly IFileUploadService _fileUploadService = fileUploadService;
+
         [HttpGet]
         [Route("GetAllFileUploadList")]
         public async Task<IActionResult> GetAllFileUploadList()

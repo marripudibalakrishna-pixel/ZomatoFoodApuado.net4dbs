@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ZomatoFoodApi_Entities\ZomatoFoodApi_Entities.csproj" />
     <ProjectReference Include="..\ZomatoFoodApi_Repository\ZomatoFoodApi_Repository.csproj" />
   </ItemGroup>
