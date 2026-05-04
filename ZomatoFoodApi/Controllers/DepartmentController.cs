@@ -11,9 +11,9 @@ namespace ZomatoFoodApi
     public class DepartmentController : ControllerBase
     {
         public IDepartmentService _departmentService;
-            public DepartmentController(IDepartmentService departmentService)
-            {
-                _departmentService = departmentService;
+        public DepartmentController(IDepartmentService departmentService)
+        {
+            _departmentService = departmentService;
         }
 
         [HttpPost]
@@ -95,7 +95,7 @@ namespace ZomatoFoodApi
             }
             try
             {
-                var deptdata = await _departmentService.GetDepartmentById(deptid    );
+                var deptdata = await _departmentService.GetDepartmentById(deptid);
                 return StatusCode(StatusCodes.Status200OK, deptdata);
             }
             catch (Exception ex)
@@ -116,7 +116,7 @@ namespace ZomatoFoodApi
                 }
                 else
                 {
-                    var deptdata = await _departmentService.UpdateDepartment (deptdto);
+                    var deptdata = await _departmentService.UpdateDepartment(deptdto);
                     return StatusCode(StatusCodes.Status200OK, deptdata);
                 }
             }

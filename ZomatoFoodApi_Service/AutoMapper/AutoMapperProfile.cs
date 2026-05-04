@@ -15,6 +15,10 @@ namespace ZomatoFoodApi_Service.AutoMapper
         {
             CreateMap<FileUploadDto, FileUpload>();
             CreateMap<FileUpload, FileUploadDto>();
+            CreateMap<DepartmentDto, Department>();
+            CreateMap<Department, DepartmentDto>();
+            CreateMap<Employee,EmployeeDto>();
+            CreateMap<Employee, EmployeeDto>();
             //CreateMap<SourceModelClass, DestinationModelClass>().ReverseMap();
             //ReverseMap() is used to create a two-way mapping between the source and destination classes. It allows you to map in both directions without having to define separate mappings for each direction.
         }
