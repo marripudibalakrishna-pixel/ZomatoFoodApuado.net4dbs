@@ -1,8 +1,11 @@
+using ZomatoFoodAPI_BusinessEntities.Interfaces;
 using ZomatoFoodApi_DbConnectivity;
 using ZomatoFoodAPI_DbContectivity;
 using ZomatoFoodApi_Entities.Interfaces;
 using ZomatoFoodApi_Repository;
+using ZomatoFoodAPI_RepositoryLayer;
 using ZomatoFoodApi_Service;
+using ZomatoFoodAPI_ServiceLayer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +25,9 @@ builder.Services.AddScoped<IDepartmentService, DepartmentService>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
+
+builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -40,23 +40,21 @@ namespace ZomatoFoodApi
         }
         [HttpDelete]
         [Route("DeleteDepartmentById/{id}")]
-        public async Task<IActionResult> delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             if (id < 0)
-            {//If input parameters are wrongly sent or empty, we will get 400 badrequest statuscode:Status400BadRequest
+            {
                 return StatusCode(StatusCodes.Status400BadRequest, "bad request");
             }
             try
             {
                 var deptdata = await _departmentService.DeleteDepartment(id);
                 if (deptdata == null)
-                {//in db if you get empty data we need to retrun this statuscode:Status404NotFound
-                    return StatusCode(StatusCodes.Status404NotFound, "deptdata not  found");
-                }
-                else
                 {
-                    return StatusCode(StatusCodes.Status200OK, "deleted successfully");
+                    return StatusCode(StatusCodes.Status404NotFound, "deptdata not found");
                 }
+
+                return StatusCode(StatusCodes.Status200OK, "deleted successfully");
             }
             catch (Exception ex)
             {
