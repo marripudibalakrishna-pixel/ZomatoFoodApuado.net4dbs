@@ -24,10 +24,11 @@ builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 builder.Services.AddScoped<IDepartmentService, DepartmentService>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+
 var app = builder.Build();
 
-builder.Services.AddTransient<IUserService, UserService>();
-builder.Services.AddTransient<IUserRepository, UserRepository>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
