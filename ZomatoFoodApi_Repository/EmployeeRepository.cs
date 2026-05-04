@@ -12,7 +12,7 @@ using ZomatoFoodApi_Entities.Utils;
 
 namespace ZomatoFoodApi_Repository
 {
-    internal class EmployeeRepository : IEmployeeRepository
+    public class EmployeeRepository : IEmployeeRepository
     {
         private readonly IConnectionFactory _connectionFactory;
         public EmployeeRepository(IConnectionFactory connectionFactory)
